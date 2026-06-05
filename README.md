@@ -79,7 +79,7 @@ lib/
 ---
 
 ## Features
-1. **Home** — Welcome banner, gold/silver rate cards, featured grid (2 columns).
+1. **Home** — Welcome banner, gold/silver rate cards, featured (2 columns).
 2. **Shop** — `ListView.builder` with category chips (All, Rings, Necklaces, Bracelets, Earrings, Watches) and search/filter functionality.
 3. **Details Dialog** — Popup dialog details showing the image, material info, description, price, and reservation/favoriting capabilities with back navigation (`setState`).
 4. **Calculator (unique feature)** — Gold/Silver dropdown, purity chips, gram input with +/- buttons, live total and url-button to show real gold/silver stock market prices.
@@ -100,7 +100,7 @@ lib/
 | **UI Complexity & Layout** | Scaffold, AppBar, Drawer, BottomNav, Row, Column, Container, Card, ListView. | **Done.** I used standard `Scaffold`, custom `AppBar` (`JoyaAppBar`), a custom `Drawer` (`CustomDrawer`), a premium `BottomNav` (`CurvedNavigationBar`), and layout widgets like `Row`, `Column`, `Container`, `Card`, and `ListView.builder`. |
 | **Screens & Navigation** | Minimum 4 screens, pass data to details screen. | **Done.** I implemented **5 screens** (`HomeScreen`, `ShopScreen`, `CalculatorScreen`, `AboutScreen`, and `FavoritesScreen`) along with an interactive product details popup dialog (`ProductDetailsDialog`), passing the `JewelryModel` data object directly to it. |
 | **Data Handling** | Models, List of objects, ListView.builder, search/filter. | **Done.** I created 3 model classes (`JewelryModel`, `CategoryModel`, `MarketPriceModel`), managed list objects in `CatalogController`, and implemented dynamic search and category chip filtering in `ShopScreen`. |
-| **Assets & Packages** | Assets, network images, external packages. | **Done.** I configured local assets, network image loading, and integrated three pub.dev packages: `google_fonts`, `curved_navigation_bar`, and `url_launcher`. |
+| **Assets & Packages** | Assets, network images, external packages. | **Done.** I configured local assets, network image loading, and integrated three pub.dev packages: `google_fonts`, `curved_navigation_bar`,`flutter_launcher_icons`, and `url_launcher`. |
 | **OOP & Dart Understanding** | Functions, loops, classes, and 2 OOP concepts. | **Done.** I utilized functions, lists, loops, classes, and implemented OOP concepts (Encapsulation, Inheritance, Polymorphism/Interfaces, Abstraction). |
 | **Code Organization (MVC)** | models/, views/ (with a components/ subfolder), controllers/ directories. | **Done.** I structured the codebase cleanly following MVC pattern: `lib/models/`, `lib/controllers/`, `lib/views/`, and `lib/views/components/`. |
 
@@ -119,7 +119,7 @@ lib/
 | **Create at least 2 model classes** | **Done.** I created 3 model classes: `JewelryModel`, `CategoryModel`, and `MarketPriceModel`. |
 | **Create at least 1 controller/helper class** | **Done.** I created `CatalogController` to combine and filter products,each category has its own `Controller` for its items that has title, description, price, image url, category, material and if featured, and `MarketPricesController` to manage metal rates. |
 | **Use asset images and network images** | **Done.** I loaded brand logos and product items using local assets (`Image.asset`), and welcome shop banners using network urls (`Image.network`). |
-| **Use at least one package from pub.dev** | **Done.** I integrated 3 packages: `google_fonts`, `curved_navigation_bar`, and `url_launcher`. |
+| **Use at least one package from pub.dev** | **Done.** I integrated 4 packages: `google_fonts`, `curved_navigation_bar`,`flutter_launcher_icons`, and `url_launcher`. |
 | **Use navigation and pass data from list screen to details screen** | **Done.** I passed the `JewelryModel` object reference to `ProductDetailsDialog` and showed it via `showDialog`. |
 | **Add search OR filter feature** | **Done.** I added a real-time text search field and horizontal category chips to filter products in `ShopScreen`. |
 | **Use at least 2 OOP concepts** | **Done.** I applied OOP concepts (Encapsulation, Abstraction) |
@@ -133,6 +133,7 @@ lib/
 - `google_fonts` (Playfair Display, Cinzel, Great Vibes, Poppins)
 - `curved_navigation_bar`
 - `url_launcher`
+- `flutter_launcher_icons`
 - Asset images + network images
 
 ---
