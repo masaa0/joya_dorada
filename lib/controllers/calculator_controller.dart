@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 // calculator math - rates per gram for gold/silver purities
 
 class GoldPurityLabels {
@@ -16,11 +18,11 @@ class SilverPurityRates {
   static const List<double> rates = [1.05, 0.94];
 }
 
-// used by CalculatorScreen - getRate, getPurities, calculateTotal
-class CalculatorController {
-  static const List<String> metals = ['Gold', 'Silver'];
+// used as a base class by CalculatorScreenState using standard inheritance
+abstract class CalculatorController<T extends StatefulWidget> extends State<T> {
+  List<String> get metals => const ['Gold', 'Silver'];
 
-  static double getRate(String metal, String purity) {
+  double getRate(String metal, String purity) {
     if (metal == 'Gold') {
       final index = GoldPurityLabels.labels.indexOf(purity);
       if (index >= 0) return GoldPurityRates.rates[index];
@@ -31,12 +33,12 @@ class CalculatorController {
     return 0.0;
   }
 
-  static List<String> getPurities(String metal) {
+  List<String> getPurities(String metal) {
     if (metal == 'Gold') return GoldPurityLabels.labels;
     return SilverPurityLabels.labels;
   }
 
-  static double calculateTotal(String metal, String purity, double grams) {
+  double calculateTotal(String metal, String purity, double grams) {
     return grams * getRate(metal, purity);
   }
 }
